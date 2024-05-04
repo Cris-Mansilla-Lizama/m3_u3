@@ -20,15 +20,15 @@ router.post('/', async (req, res, next) => {
   var obj = {
     to: 'mansillalizamacristian@gmail.com',
     subject: 'Mensaje desde la web de Pelitos Contentos',
-    html: nombre + " " + apellido + " se ha comunicado a través de la web con el siguiente mensaje: " + mensaje + " su correo es: " + email + " su teléfono es: " + tel + " y nos escribe desde la ciudad de " + ciudad + " provincia de " + provincia + "."
+    html: nombre + " " + apellido + " se ha comunicado a través de la web con el siguiente mensaje: " + mensaje +", su correo es: " + email + ", su teléfono es: " + tel + ", y nos escribe desde la ciudad de " + ciudad + " provincia de " + provincia + "."
   }
 
   var transport = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
     auth: {
-      user: process.SMTP_USER,
-      pass: process.SMTP_PASS
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS
     }
   });
   var info = await transport.sendMail(obj);
