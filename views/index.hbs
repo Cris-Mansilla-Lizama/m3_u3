@@ -16,21 +16,45 @@
     <div id="actividades" class="col-md-5 offset-md-2 scroll_section">
         <h2>Próximas Actividades</h2>
         <ul class="lista-novedades">
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#castgatos"><img src="images/img_01.jpeg" width="30px">
-                    Castración Masiva para Gatos </a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#castperros"><img src="images/img_01.jpeg" width="30px">
-                    Castración Masiva para Perros </a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#opantipar"><img src="images/img_01.jpeg" width="30px">
-                    Operativo Antiparasitario </a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#adopciones"><img src="images/img_01.jpeg" width="30px">
-                    Jornadas de Adopción </a></li>
-            <li><a href="#" data-bs-toggle="modal" data-bs-target="#responsables"><img src="images/img_01.jpeg"
-                        width="30px"> Talleres de cuidado y tenencia responsable </a></li>
+
+            {{#each novedades}}
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}"><img src="images/img_01.jpeg"
+                        width="30px">
+                    {{titulo}} </a></li>
+            
+            {{/each}}
         </ul>
 
     </div>
 
-    <!--       Inicio carrusel -->
+<!-- Modal 1 -->
+{{#each novedades}}
+    <div class="modal fade" id="Modal{{id}}" tabindex="-1" aria-labelledby="castgatos" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"> <strong> {{subtitulo}} </strong>
+                    {{!-- El primer sábado de cada mes a partir de las 10:00 Hs, en Estadio Club Independiente. Lago
+                    Puelo
+                    1525, Villa Regina, Río Negro. --}} <br> {{cuerpo}} {{!-- Importante: Sólo se atienden a las primeras 25
+                        mascotas
+                        y
+                        deben venir con ayuno de 12 Hs. --}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 1 -->
+
+{{/each}}
+        <!--       Inicio carrusel -->
     <div class="col-md-3 my-3">
         <div class="rounded py-5 testimonios">
             <h2 class="text-center">Testimonios</h2>
@@ -55,7 +79,7 @@
                     <div class="carousel-item">
                         <div class="testimonio">
                             <h5>Adopté 3 hermanitas</h5>
-                            <p>Moni.</p>
+                            <p>Nati.</p>
                         </div>
                     </div>
 
@@ -79,138 +103,7 @@
         </div> <!-- fin carrusel -->
     </div> <!-- Fin row -->
 
-    <!-- Modal 1 -->
-    <div class="modal fade" id="castgatos" tabindex="-1" aria-labelledby="castgatos" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Castración Masiva para Gatos</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    El primer sábado de cada mes a partir de las 10:00 Hs, en Estadio Club Independiente. Lago
-                    Puelo
-                    1525, Villa Regina, Río Negro. <br> <strong> Importante: Sólo se atienden a las primeras 25
-                        mascotas
-                        y
-                        deben venir con ayuno de 12 Hs.</strong>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal 1 -->
-
-
-    <!-- Modal 2 -->
-    <div class="modal fade" id="castperros" tabindex="-1" aria-labelledby="castperros" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Castración Masiva para Perros</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    El segundo sábado de cada mes a partir de las 10:00 Hs, en Estadio Club Independiente. Lago
-                    Puelo
-                    1525, Villa Regina, Río Negro. <br> <strong> Importante: Sólo se atienden a las primeras 12
-                        mascotas
-                        y
-                        deben venir con ayuno de 12 Hs.</strong>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal 2 -->
-
-
-    <!-- Modal 3 -->
-    <div class="modal fade" id="opantipar" tabindex="-1" aria-labelledby="opantipar" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Operativo Antiparasitario</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Mes de abril de 2024, viernes 15 y sábado 16 a las 16:00 hs. en el salón comunitario del
-                    barrio
-                    Confluencia, Mariano
-                    Moreno 650, Villa Regina, Río Negro. <br> <strong> El costo del servicio de desparasitación
-                        es
-                        gratuito,
-                        únicamente se solicitará la donación de alimentos no perecederos, o alimento concentrado
-                        para
-                        mascotas. </strong>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal 3 -->
-
-
-    <!-- Modal 4 -->
-    <div class="modal fade" id="adopciones" tabindex="-1" aria-labelledby="adopciones" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Jornadas de adopción</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Pelitos contentos se encuentra presente en todas las ferias populares de la ciudad: <br>
-                    <ul>Ferias:
-                        <li>Feria de Productores Alimentarios, Plaza Belgrano</li>
-                        <li>Feria de Emprendedores, Plaza de los Próceres</li>
-                        <li>Feria Rural San Isidro, cancha Barrio San Isidro</li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal 4 -->
-
-
-    <!-- Modal 5 -->
-    <div class="modal fade" id="responsables" tabindex="-1" aria-labelledby="responsables" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Talleres de cuidado y tenencia
-                        responsable
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Talleres orientados al cuidado de las mascotas, tales como la higiene, educación, prevención
-                    de
-                    enfermedades, convivencia, etc. Las reuniones son via Zoom cada miércoles a las 20:00 Hs.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Modal 5 -->
+    
     <!-- inicio nosotros -->
     <!-- <div id="nosotros" class="row align-items-center py-4">
             <div class="col-lg-2 col-md-3 offset-lg-2 d-none d-sm-block"></div>
